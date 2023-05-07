@@ -1,138 +1,267 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Agency Profile Page</title>
-	<link rel="stylesheet" href="css/style-agency.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-</head>
-<body>
-	<header class="header">
-		<div class="header-img"></div>
-	</header>
-		<div class="stars">
-            <h3>Rate Us</h3>
-			<b-form-rating v-model="value" class="star" data-star="1">&#9733;</b-form-rating>
-			<b-form-rating v-model="value" class="star" data-star="2">&#9733;</b-form-rating>
-			<b-form-rating v-model="value" class="star" data-star="3">&#9733;</b-form-rating>
-			<b-form-rating v-model="value" class="star" data-star="4">&#9733;</b-form-rating>
-			<b-form-rating v-model="value" class="star" data-star="5">&#9733;</b-form-rating>
-		</div>
-        <div class="rating-selection">
-			<div class="rating-selection">
-		        <input type="hidden" name="rating" value="" id="rating">
-	        </div>
-		</div>
-        <div class="about-container">
-            <h2>About Us</h2>
-            <p>Main description of the agency here.</p>
-            <h3>Header 1</h3>
-            <p>Description of header 1 here.</p>
-            <h3>Header 2</h3>
-            <p>Description of header 2 here.</p>
-            <h3>Header 3</h3>
-            <p>Description of header 3 here.</p>
-            <h3>Header 4</h3>
-            <p>Description of header 4 here.</p>
-            <h3>Header 5</h3>
-            <p>Description of header 5 here.</p>
-        </div>
-        <div class="rating-summary">
-            <h2>Rating Summary</h2>
-            <div class="average-rating">4.5</div>
-            <div class="rating-bars">
-                <div class="rating-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="rating-bar" style="height: 30%;"></div>
-                <div class="rating-bar" style="height: 15%;"></div>
-                <div class="rating-bar" style="height: 10%;"></div>
-                <div class="rating-bar" style="height: 25%;"></div>
-            </div>
-        </div>
-        <div class="review-container">
-            <h2>Reviews</h2>
-            <div class="container">
-            <!-- Filter options -->
-            <div class="row">
-                <div class="col-md-4 mb-2">
-                <select class="form-control">
-                    <option value="recent">Most recent</option>
-                    <option value="oldest">Oldest</option>
-                </select>
-                </div>
-                <div class="col-md-4 mb-2">
-                <select class="form-control">
-                    <option value="highest">Highest rating</option>
-                    <option value="lowest">Lowest rating</option>
-                </select>
-                </div>
-                <div class="col-md-4 mb-2">
-                <button type="button" class="btn btn-primary">Filter</button>
-                </div>
-            </div>
-            
-            <!-- Comment review section -->
-            <div class="row">
-                <div class="col-md-2">
-                <img src="profile_picture.jpg" alt="Profile Picture" class="img-thumbnail">
-                </div>
-                <div class="col-md-10">
-                <form>
-                    <div class="form-group">
-                    <label for="comment">Add a comment:</label>
-                    <textarea class="form-control" rows="3" id="comment"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                </div>
-            </div>
-    
-        <!-- Review list -->
-        <div class="row">
-        <div class="col-md-12">
-        <hr>
-        <div class="media">
-            <img src="profile_picture.jpg" alt="Profile Picture" class="mr-3 rounded-circle" style="width:60px;">
-            <div class="media-body">
-            <h4>John Doe <small><i>Posted on February 19, 2023</i></small></h4>
-            <div class="rating">
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-                <span class="star"></span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fermentum lobortis erat. In hac habitasse platea dictumst. Proin non eleifend elit. Donec lacinia justo at nisi tincidunt suscipit. Aenean eget metus id mi vehicula vestibulum. Nullam faucibus tellus nec sapien luctus, sit amet semper est euismod. Curabitur eget enim ac lectus lobortis feugiat.</p>
-            <div class="float-left">
-                <button type="button" class="btn btn-sm btn-outline-success">
-                <i class="fa fa-thumbs-up"></i> 10
-                </button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">
-                <i class="fa fa-comment"></i>
-                </button>
-            </div>
-            </div>
-        </div>
-	</div>
 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>TUGON</title>
+</head>
+
+<body>
+	<main>
+	  <header>
+		<div class="tb">
+		  <div class="td" id="logo">
+			<a href="homepage.html"><img src="tugonlogo.png"></a>
+		  </div>
+		  <div class="td" id="search-form">
+			<form method="get" action="#">
+			  <input type="text" placeholder="Search Agency">
+			  <button type="submit"><i class="material-icons">search</i></button>
+			</form>
+		  </div>
+		  <div class="td" id="f-name-l"><span>USER NUMBER 1</span></div>
+		  <div class="td" id="i-links">
+			<div class="tb">
+			  <div class="td">
+				<a href="userprofile.html" id="p-link">	
+				  <img src="https://imagizer.imageshack.com/img923/2452/zifFKH.jpg">
+				</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </header>
+	  <div id="profile-upper">
+		<div id="profile-banner-image">
+		  <img src="https://www.deped.gov.ph/wp-content/uploads/MATATAG-Cover-Photo.jpg" alt="Banner image">
+		</div>
+		<div id="profile-d">
+		  <div id="profile-pic">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Department_of_Education.svg">
+		  </div>
+		  <div id="u-name">Department of Education (DEPED)</div>
+		  <div class="tb" id="m-btns">
+			<div class="td">
+			</div>
+			<div class="td">
+			</div>
+		  </div>
+		</div>
+		<div id="black-grd"></div>
+	  </div>
+	  <div id="main-content">
+		<div class="tb">
+		  <div class="td" id="l-col">
+			<div class="l-cnt">
+			  <div class="cnt-label">
+				<i class="l-i" id="l-i-i"></i>
+				<span>About Us</span>
+			  </div>
+			  <div id="i-box">
+				<div id="intro-line">GOVERNMENT AGENCY</div>
+				<div id="u-occ">The Department of Education is the executive department of the Philippine government responsible for ensuring access to, promoting equity in, and improving the quality of basic education. It is the main agency tasked to manage and govern the Philippine system of basic education.</div>
+				<div id="u-loc"><i class="material-icons">location_on</i><a href="https://www.google.com/maps/place/DepEd+Iloilo+City+SDO/">ILOILO</a>, <a href="https://www.google.com/maps/place/Philippines/">PHILIPPINES</a></div>
+			  </div>
+			</div>
+			<div class="l-cnt l-mrg">
+			  <div class="cnt-label">
+				<i class="l-i" id="l-i-p"></i>
+				<span>Photos</span>
+			  </div>
+			  <div id="photos">
+				<div class="tb">
+				  <div class="tr">
+					<div class="td" ></div>
+					<div class="td"></div>
+					<div class="td"></div>
+				  </div>
+				  <div class="tr">
+					<div class="td"></div>
+					<div class="td"></div>
+					<div class="td"></div>
+				  </div>
+				  <div class="tr">
+					<div class="td"></div>
+					<div class="td"></div>
+					<div class="td"></div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="l-cnt l-mrg">
+			  <div class="cnt-label">
+				<i class="l-i" id="l-i-k"></i>
+				<span>Contact us:<i id="k-nm"><a href="deped.gov.ph">deped.gov.ph</a></i></span>
+			  </div>
+			  <div class="q-ad-c">
+				  <p>RATE US</p>
+			  </div>
+			<div class="stars2_">
+				<div class="stars">
+					<b-form-rating v-model="value" class="star" data-star="1">&#9733;</b-form-rating>
+					<b-form-rating v-model="value" class="star" data-star="2">&#9733;</b-form-rating>
+					<b-form-rating v-model="value" class="star" data-star="3">&#9733;</b-form-rating>
+					<b-form-rating v-model="value" class="star" data-star="4">&#9733;</b-form-rating>
+					<b-form-rating v-model="value" class="star" data-star="5">&#9733;</b-form-rating>
+				</div>
+			</div>
+			</div>
+			<div class="l-cnt l-mrg">
+				<div class="text">
+					TOTAL REVIEWS
+				</div>
+				<div class="average-rating">
+					<p>4.5</p>
+				</div>
+				<div class="rating-bars">
+					<div class="rating-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <p>1</p> </div>
+					<div class="rating-bar" style="height: 100%;"> <p>2</p> </div>
+					<div class="rating-bar" style="height: 15%;"> <p>3</p> </div>
+					<div class="rating-bar" style="height: 10%;"> <p>4</p> </div>
+					<div class="rating-bar" style="height: 25%;"> <p>5</p> </div>
+				</div>
+			</div>
+			<div id="t-box">
+			  <div id="cpy-nt">Tugon &copy; <span id="curr-year"></span></div>
+			</div>
+		  </div>
+		  <div class="td" id="m-col">
+			<div class="m-mrg" id="p-tabs">
+				<div class="tb">
+					<div class="td">
+						<div class="tb" id="p-tabs-m">
+							<div class="td active">
+								<span>FEEDBACKS RECEIVED</span>
+							</div>
+						</div>
+					</div>
+			  </div>
+			</div>
+			<div class="m-mrg" id="composer">
+				<div id="c-tabs-cvr">
+					<i class="material-icons">
+						subject
+						<span>
+						Leave a review
+						</span>
+					</i>
+				</div>
+				<div id="c-c-main">
+					<div class="tb">
+						<div class="td" id="p-c-i">
+							<img src="https://imagizer.imageshack.com/img923/2452/zifFKH.jpg" alt="Profile pic">
+						</div>
+						<div class="td" id="c-inp">
+							<form method="get" action="#">
+								<div class="form-group">
+									<textarea class="form-control" rows="1" id="comment" input type="text" placeholder="Share your thoughts about us..."></textarea>
+								</div>
+								<button type="submit" class="btn btn-primary">
+									Submit
+								</button>
+								<div class="stars_">
+									<div class="stars">
+										<b-form-rating v-model="value" class="star" data-star="1">&#9733;</b-form-rating>
+										<b-form-rating v-model="value" class="star" data-star="2">&#9733;</b-form-rating>
+										<b-form-rating v-model="value" class="star" data-star="3">&#9733;</b-form-rating>
+										<b-form-rating v-model="value" class="star" data-star="4">&#9733;</b-form-rating>
+										<b-form-rating v-model="value" class="star" data-star="5">&#9733;</b-form-rating>
+									</div>
+								</div>
+								<div id="insert_emoji" method="get" action="">
+									<i class="material-icons">
+										camera
+									</i>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+				<div>		           
+					<div class="post">
+						<div class="tb">
+							<a href="#" class="td p-p-pic"><img src="https://imagizer.imageshack.com/img923/2452/zifFKH.jpg" alt="User's profile pic"></a>
+							<div class="td p-r-hdr">
+								<div class="p-u-info">
+									<a href="#">User #1</a> posted a feedback to <a href="#">DEPED AGENCY</a>
+								</div>
+								<div class="p-dt">
+								  <i class="material-icons">calendar_today</i>
+								  <span>May 5, 2023</span>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<span align="right">Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!Your facility is great!</span>
+						<hr>
+						<a href="#" class="p-cnt-v">
+						<img src="https://www.rappler.com/tachyon/2022/02/face-to-face-classes-manila-february-9-2022-005.jpg">
+						</a>
+							<div>
+								<div class="p-acts">
+									<div class="p-act like">
+										<i href="#" class="material-icons" onclick="myFunction(this)">
+											thumb_up_alt
+											<span id="activelike"></span>
+										</i>
+									</div>
+									<div class="p-act comment">
+										<i class="material-icons">
+											comment
+										</i>
+									</div>
+									<div class="p-act share">
+										<i class="material-icons">
+											reply
+										</i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="loading">
+						<p> Load more reviews...</p>
+						<a href="#">
+							<i class="material-icons">
+								autorenew
+							</i>
+						</a>
+					</div>
+				</div>
+		  <div class="td" id="r-col">
+		  </div>
+		</div>
+	  </div>
+	 </main>
 </body>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-    <script>
-            export default {
-              data() {
-                return {
-                  value: 3
-                }
-              }
-            }
-    </script>
+	<script>
+		let clickcount = 1;
+		var date = new Date();
+		document.getElementById("curr-year").innerHTML = date.getFullYear();
+		
+		function likeCounter() {
+		  if (typeof(Storage) !== "undefined") {
+		    if (localStorage.clickcount) {
+				localStorage.clickcount = Number(localStorage.clickcount)+1;
+			} else {
+				localStorage.clickcount = 1;
+			}
+			document.getElementById("activelike").innerHTML = localStorage.clickcount;
+			} else {
+			document.getElementById("activelike").innerHTML = "Sorry, your browser does not support web storage...";
+		  }
+		}
+		
+		function myFunction(x) {
+			x.classList.toggle(likeCounter());
+		}
+	</script>
 </html>
